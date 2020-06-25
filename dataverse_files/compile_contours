@@ -1,0 +1,13 @@
+
+# for linux
+g++ -fPIC -O3 -c find_contours.cpp -o find_contours.o
+g++ -shared -Wl,-soname,libcontours64.so.1 -o libcontours64.so.1.0 find_contours.o
+
+
+# for mac
+#g++ -O3 -dynamiclib find_contours.cpp -o find_contours.dylib
+
+
+# for windows, from linux
+#i586-mingw32msvc-g++ -fPIC -O3 -c find_contours.cpp -o find_contours.o
+#i586-mingw32msvc-g++ -shared -Wl,-soname,find_contours.dll -o find_contours.dll find_contours.o
